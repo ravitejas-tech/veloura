@@ -1,4 +1,4 @@
-/* Veloura — interactions */
+/* Veloura: interactions */
 (() => {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -262,7 +262,7 @@
     summaryTotal.textContent = n ? `$${total + BOX_FEE}` : '$0';
     summaryCount.textContent = n
       ? `${n} ${n === 1 ? 'treasure' : 'treasures'} · includes $${BOX_FEE} hand-wrapping`
-      : 'Your box is empty — add a little something.';
+      : 'Your box is empty. Add a little something.';
     addBoxBtn.disabled = n === 0;
   };
 
@@ -350,7 +350,7 @@
       msg.textContent = 'Hmm, that address looks a little off.';
       return;
     }
-    msg.textContent = 'Sealed with love — check your inbox for 10% off ✦';
+    msg.textContent = 'Sealed with love. Check your inbox for 10% off ✦';
     form.reset();
   });
 })();
