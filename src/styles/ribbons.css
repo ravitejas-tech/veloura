@@ -1,0 +1,31 @@
+/* Veloura: Crossing marquee ribbons under the hero. */
+
+/* =========================================================
+   RIBBONS
+   ========================================================= */
+.ribbons { position: relative; height: 190px; overflow: hidden; margin-top: -10px; }
+.ribbon {
+  position: absolute; left: -5%; right: -5%;
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ribbon-back { top: 36px; transform: rotate(2.4deg); background: var(--lav-300); color: var(--plum-800); }
+.ribbon-front {
+  top: 78px; transform: rotate(-2.2deg);
+  background: linear-gradient(90deg, var(--plum-800), var(--plum-700) 50%, var(--plum-800));
+  color: var(--lav-100);
+  box-shadow: 0 20px 40px -20px rgba(38, 26, 59, .6);
+}
+.ribbon::before, .ribbon::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 1px;
+  background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 12px);
+  opacity: .35;
+}
+.ribbon::before { top: 7px; }
+.ribbon::after { bottom: 7px; }
+.ribbon-track { display: inline-flex; align-items: center; gap: 2.2rem; padding-right: 2.2rem; animation: marquee 38s linear infinite; }
+.ribbon-track.reverse { animation-direction: reverse; animation-duration: 44s; }
+.ribbon-track span { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 2.1rem); font-style: italic; }
+.ribbon-track b { font-weight: 400; font-size: 1rem; opacity: .7; }
+@keyframes marquee { to { transform: translateX(-50%); } }

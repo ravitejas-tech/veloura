@@ -1,0 +1,30 @@
+/* Veloura: Lavender field quote with parallax background. */
+
+/* =========================================================
+   FIELD QUOTE
+   ========================================================= */
+.field {
+  position: relative; overflow: hidden;
+  min-height: 92vh;
+  display: grid; place-items: center;
+  padding: 120px var(--gutter);
+  isolation: isolate;
+}
+.field-bg { position: absolute; inset: -18% 0; z-index: -2; background-size: cover; background-position: center; will-change: transform; }
+.field-overlay {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, var(--lav-50) 0%, rgba(250, 247, 254, 0) 22%, rgba(250, 247, 254, 0) 78%, var(--lav-50) 100%),
+    radial-gradient(55% 45% at 50% 50%, rgba(38, 26, 59, .45), transparent 75%),
+    linear-gradient(180deg, rgba(63, 44, 96, .25), rgba(38, 26, 59, .55));
+}
+.field-quote {
+  margin: 0; max-width: 60rem; text-align: center;
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2rem, 4.6vw, 4rem); line-height: 1.12;
+  color: #fff;
+  text-shadow: 0 4px 30px rgba(38, 26, 59, .45);
+}
+.field-quote em { font-style: italic; color: var(--lav-200); }
+.quote-mark { display: block; font-size: 2.2em; line-height: .5; height: .45em; color: var(--lav-300); }
+.field-quote cite { display: block; margin-top: 2rem; font-family: var(--sans); font-style: normal; font-size: .82rem; letter-spacing: .25em; text-transform: uppercase; color: var(--lav-100); }

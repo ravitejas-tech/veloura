@@ -1,0 +1,66 @@
+/* Veloura: Fixed pill navigation, logo, icon buttons and bag counter. */
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: min(var(--max), calc(100% - 32px));
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 10px 12px 10px 22px;
+  border-radius: 999px;
+  background: rgba(250, 247, 254, .55);
+  border: 1px solid rgba(255, 255, 255, .7);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  transition: box-shadow .4s, background .4s, top .4s var(--ease);
+}
+.nav.is-scrolled { background: rgba(250, 247, 254, .85); box-shadow: 0 18px 40px -24px rgba(38, 26, 59, .4); }
+
+.logo { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--serif); font-size: 1.7rem; font-weight: 500; font-style: italic; color: var(--plum-800); letter-spacing: -.01em; }
+.logo-mark { width: 22px; height: 22px; fill: var(--lav-500); }
+.logo.light { color: var(--lav-50); }
+.logo.light .logo-mark { fill: var(--lav-300); }
+
+.nav-links { display: flex; gap: clamp(14px, 2.4vw, 34px); }
+.nav-links a {
+  position: relative; font-size: .9rem; font-weight: 500; color: var(--plum-700);
+  padding: 4px 0;
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px;
+  background: var(--lav-500); transform: scaleX(0); transform-origin: right;
+  transition: transform .45s var(--ease);
+}
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.nav-actions { display: flex; align-items: center; gap: 4px; }
+.icon-btn {
+  position: relative; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; transition: background .3s;
+}
+.icon-btn:hover { background: var(--lav-100); }
+.icon-btn svg { width: 21px; height: 21px; fill: none; stroke: var(--plum-800); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.bag { background: var(--plum-800); }
+.bag:hover { background: var(--plum-700); }
+.bag svg { stroke: var(--lav-50); }
+.bag-count {
+  position: absolute; top: -3px; right: -3px;
+  min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 10px; border: 2px solid var(--lav-50);
+  background: var(--lav-400); color: #fff;
+  font-size: .68rem; font-weight: 700; line-height: 16px; text-align: center;
+}
+.bag-count.bump { animation: bump .5s var(--ease); }
+@keyframes bump { 40% { transform: scale(1.45); } }
+
+.menu-btn { display: none; }
+.menu-btn span { position: absolute; left: 13px; right: 13px; height: 1.6px; background: var(--plum-800); transition: transform .4s var(--ease); }
+.menu-btn span:first-child { transform: translateY(-4px); }
+.menu-btn span:last-child { transform: translateY(4px); }
+.menu-btn[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }

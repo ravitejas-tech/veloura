@@ -1,0 +1,33 @@
+/* Veloura: Design tokens: colours, fonts, spacing, easing, shadows. Edit here to re-theme the whole site. */
+
+:root {
+  /* palette */
+  --lav-50: #faf7fe;
+  --lav-100: #f2ecfb;
+  --lav-200: #e5d9f6;
+  --lav-300: #cfbaee;
+  --lav-400: #ae91de;
+  --lav-500: #8f6dc8;
+  --plum-600: #5e4388;
+  --plum-700: #3f2c60;
+  --plum-800: #261a3b;
+  --plum-900: #1b1229;
+  --ink: #241a37;
+  --muted: #6d6182;
+  --blush: #f4d7e3;
+  --gold: #c9a466;
+  --ivory: #fffcf6;
+
+  /* Font stacks come from next/font in src/app/fonts.ts (self-hosted Google Fonts) */
+  --serif: var(--font-serif);
+  --sans: var(--font-sans);
+  --hand: var(--font-hand);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  /* content width: 1320px up to ~1470px screens, then grows with the screen (max 1600px) */
+  --max: clamp(1320px, 90vw, 1600px);
+  --radius: 28px;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --shadow-soft: 0 30px 60px -30px rgba(63, 44, 96, .35);
+  --shadow-lift: 0 40px 80px -30px rgba(38, 26, 59, .45);
+}

@@ -1,0 +1,24 @@
+/* Veloura: #VelouraMoments gallery marquee. */
+
+/* =========================================================
+   MOMENTS
+   ========================================================= */
+.moments { padding: 20px 0 clamp(80px, 10vw, 140px); overflow: hidden; }
+.moments-head {
+  max-width: var(--max); margin: 0 auto 36px; padding: 0 var(--gutter);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.moments-head h2 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(2rem, 3.6vw, 3rem); color: var(--plum-800); }
+.moments-head p { margin: 0; color: var(--muted); }
+.moments-track { display: flex; gap: 18px; width: max-content; animation: marquee 60s linear infinite; }
+.moments-track:hover { animation-play-state: paused; }
+.moments-track img {
+  width: clamp(200px, 20vw, 270px); aspect-ratio: 25 / 32; object-fit: cover;
+  border-radius: 22px;
+  transition: transform .6s var(--ease), filter .6s;
+  filter: saturate(.85);
+}
+.moments-track img:nth-child(even) { transform: translateY(40px); }
+.moments-track img:hover { filter: saturate(1.1); transform: translateY(-6px) rotate(-2deg); }
+.moments-track img:nth-child(even):hover { transform: translateY(34px) rotate(2deg); }
+.moments-track { padding-bottom: 40px; }

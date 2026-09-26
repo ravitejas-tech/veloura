@@ -1,0 +1,29 @@
+/* =========================================================
+   Veloura: The Art of Thoughtful Gifting
+   Copyright (c) 2026 Raviteja Salva. All rights reserved.
+   Licensed under the Veloura Template License: see LICENSE.md.
+   ---------------------------------------------------------
+   Global stylesheet entry. Files are imported in cascade
+   order; keep responsive.css and reduced-motion.css last.
+   ========================================================= */
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./typography.css";
+@import "./buttons.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./ribbons.css";
+@import "./occasions.css";
+@import "./lavender-edit.css";
+@import "./builder.css";
+@import "./story.css";
+@import "./field-quote.css";
+@import "./love-notes.css";
+@import "./moments.css";
+@import "./newsletter.css";
+@import "./footer.css";
+@import "./bag-toast.css";
+@import "./reveal.css";
+@import "./responsive.css";
+@import "./reduced-motion.css";
