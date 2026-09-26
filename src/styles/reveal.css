@@ -1,0 +1,8 @@
+/* Veloura: Scroll-reveal animation (only active once JS has loaded). */
+
+/* ---------- reveal ---------- */
+.js .reveal { opacity: 0; transform: translateY(34px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+.js .paper.reveal { transform: translateY(34px) rotate(var(--r, 0deg)); }
+.js .paper.reveal.is-in { transform: rotate(var(--r, 0deg)); }
+.js .paper.reveal.is-in:hover { transform: rotate(0deg) translateY(-8px) scale(1.02); }

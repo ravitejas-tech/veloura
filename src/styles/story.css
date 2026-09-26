@@ -1,0 +1,34 @@
+/* Veloura: Our Studio: sticky image story. */
+
+/* =========================================================
+   STORY — sticky
+   ========================================================= */
+.story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 110px); align-items: start; }
+.story-visual { position: sticky; top: 110px; height: calc(100vh - 150px); max-height: 760px; display: flex; flex-direction: column; gap: 18px; }
+.story-frame {
+  position: relative; flex: 1; overflow: hidden;
+  border-radius: 999px 999px 32px 32px;
+  box-shadow: var(--shadow-lift);
+  background: var(--lav-200);
+}
+.story-frame img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transform: scale(1.12);
+  transition: opacity 1s var(--ease), transform 1.6s var(--ease);
+}
+.story-frame img.is-active { opacity: 1; transform: scale(1); }
+.story-progress { height: 2px; border-radius: 2px; background: var(--lav-200); overflow: hidden; }
+.story-progress i { display: block; height: 100%; width: 25%; background: var(--plum-600); transition: width .8s var(--ease); }
+
+.story-steps { padding-top: 20px; }
+.story-step {
+  min-height: 52vh;
+  display: flex; flex-direction: column; justify-content: center;
+  border-top: 1px solid rgba(94, 67, 136, .15);
+  opacity: .28;
+  transition: opacity .6s var(--ease);
+}
+.story-step.is-active { opacity: 1; }
+.step-num { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--lav-500); }
+.story-step h3 { margin: .3rem 0 .8rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.05; color: var(--plum-800); }
+.story-step p { margin: 0; max-width: 28rem; color: var(--muted); font-size: 1.05rem; }

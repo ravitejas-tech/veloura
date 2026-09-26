@@ -1,0 +1,63 @@
+/* Veloura: Shared type (eyebrows, section titles, ledes) and section layout. */
+
+/* ---------- shared type ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+  margin: 0 0 1.2rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--plum-600);
+}
+.eyebrow .spark { color: var(--lav-500); font-size: 1rem; letter-spacing: 0; }
+.eyebrow .num {
+  display: inline-grid; place-items: center;
+  width: 2.2em; height: 2.2em;
+  border: 1px solid currentColor; border-radius: 50%;
+  font-size: .85em; letter-spacing: 0;
+}
+.eyebrow.light { color: var(--lav-300); }
+
+.section-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5.2vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -.015em;
+  color: var(--plum-800);
+}
+.section-title em,
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(100deg, var(--lav-500) 0%, var(--plum-600) 55%, #c07aa8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-right: .06em;
+}
+.section-title.light { color: var(--lav-50); }
+.section-title.light em {
+  background: linear-gradient(100deg, var(--lav-300), #f3c6db);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+.section-lede { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: 1.05rem; }
+
+.section {
+  padding: clamp(80px, 9vw, 130px) var(--gutter);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.section-head { margin-bottom: clamp(40px, 5vw, 72px); }
+.section-head.center { text-align: center; }
+.section-head.center .section-lede { margin-inline: auto; }
+.section-head.split {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 32px; flex-wrap: wrap;
+}
+.section-head.split .section-lede { max-width: 26rem; }

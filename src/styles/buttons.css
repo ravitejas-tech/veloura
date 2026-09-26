@@ -1,0 +1,23 @@
+/* Veloura: Buttons. */
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  padding: 1rem 1.7rem;
+  border-radius: 999px;
+  font-size: .95rem; font-weight: 600; letter-spacing: .01em;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), background .3s, color .3s;
+  white-space: nowrap;
+}
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .4s var(--ease); }
+.btn:hover svg { transform: translateX(4px); }
+.btn-solid {
+  background: var(--plum-800); color: var(--lav-50);
+  box-shadow: 0 14px 30px -12px rgba(38, 26, 59, .6);
+}
+.btn-solid:hover { transform: translateY(-2px); background: var(--plum-700); box-shadow: 0 20px 40px -14px rgba(38, 26, 59, .7); }
+.btn-ghost { border: 1px solid rgba(38, 26, 59, .25); color: var(--plum-800); }
+.btn-ghost:hover { background: var(--lav-100); border-color: var(--lav-400); }
+.btn-light { background: var(--lav-50); color: var(--plum-800); }
+.btn-light:hover:not(:disabled) { transform: translateY(-2px); background: #fff; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }

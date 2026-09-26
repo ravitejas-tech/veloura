@@ -1,0 +1,48 @@
+/* Veloura: Footer. */
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  position: relative; overflow: hidden;
+  background: var(--plum-900);
+  color: var(--lav-200);
+  padding: clamp(64px, 8vw, 100px) var(--gutter) calc(env(safe-area-inset-bottom, 0px) + 28px);
+  margin-top: clamp(40px, 6vw, 80px);
+  border-radius: clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px) 0 0;
+}
+.footer-top { max-width: calc(var(--max) - 2 * var(--gutter)); margin: 0 auto; display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+.footer-brand { max-width: 22rem; }
+.footer-brand p { color: rgba(229, 217, 246, .7); }
+.socials { display: flex; gap: 10px; margin-top: 1.4rem; }
+.socials a {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid rgba(207, 186, 238, .25);
+  transition: background .3s, border-color .3s;
+}
+.socials a:hover { background: rgba(207, 186, 238, .12); border-color: var(--lav-300); }
+.socials svg { width: 19px; height: 19px; fill: none; stroke: var(--lav-200); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.footer-cols { display: flex; gap: clamp(40px, 7vw, 100px); flex-wrap: wrap; }
+.footer-cols h2 { margin: 0 0 1rem; font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--lav-400); }
+.footer-cols a { display: block; margin-bottom: .6rem; color: rgba(229, 217, 246, .82); transition: color .3s; }
+.footer-cols a:hover { color: #fff; }
+.footer-word {
+  margin: clamp(40px, 6vw, 80px) 0 0;
+  text-align: center;
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: clamp(5rem, 23vw, 22rem);
+  line-height: .8;
+  letter-spacing: -.03em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(207, 186, 238, .35);
+  background: linear-gradient(180deg, rgba(174, 145, 222, .35), rgba(174, 145, 222, 0) 85%);
+  -webkit-background-clip: text; background-clip: text;
+  user-select: none;
+}
+.footer-bottom {
+  max-width: calc(var(--max) - 2 * var(--gutter)); margin: 28px auto 0; padding-top: 22px;
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-top: 1px solid rgba(207, 186, 238, .15);
+  font-size: .8rem; color: rgba(229, 217, 246, .55);
+}

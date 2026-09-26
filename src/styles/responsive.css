@@ -1,0 +1,111 @@
+/* Veloura: Breakpoints: 1080px (tablet), 860px (mobile nav), 600px (phone). Kept last so they override section styles. */
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1080px) {
+  .hero-inner { grid-template-columns: 1fr; min-height: 0; padding-bottom: 80px; gap: 56px; }
+  .hero-art { height: clamp(480px, 100vw, 640px); max-width: 640px; width: 100%; margin: 0 auto; justify-self: stretch; }
+  .arch-main { width: 72%; }
+  .scroll-cue { display: none; }
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .builder-inner { grid-template-columns: 1fr; }
+  .note-wall { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    position: absolute; top: calc(100% + 10px); left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    padding: 10px;
+    border-radius: 26px;
+    background: rgba(250, 247, 254, .96);
+    border: 1px solid #fff;
+    box-shadow: var(--shadow-soft);
+    opacity: 0; transform: translateY(-10px); pointer-events: none;
+    transition: opacity .35s, transform .45s var(--ease);
+  }
+  .nav-links.open { opacity: 1; transform: none; pointer-events: auto; }
+  .nav-links a { padding: 14px 18px; font-size: 1.05rem; border-radius: 16px; }
+  .nav-links a:hover { background: var(--lav-100); }
+  .nav-links a::after { display: none; }
+  .menu-btn { display: grid; }
+
+  .panels { flex-direction: column; height: auto; }
+  .panel { flex: none; height: 84px; transition: height .8s var(--ease); }
+  .panel.is-open { flex: none; height: 440px; }
+  .panel-label { writing-mode: horizontal-tb; transform: none; left: 24px; bottom: auto; top: 50%; margin-top: -1em; font-size: 1.5rem; }
+
+  .story { grid-template-columns: 1fr; }
+  .story-visual {
+    position: sticky; top: 0; z-index: 2;
+    height: calc(38vh + 104px);
+    padding: calc(env(safe-area-inset-top, 0px) + 90px) 0 14px;
+    background: linear-gradient(180deg, var(--lav-50) 92%, rgba(250, 247, 254, 0));
+  }
+  .story-frame { border-radius: 200px 200px 24px 24px; }
+  .story-step { min-height: 46vh; background: var(--lav-50); }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .nav { padding-left: 16px; }
+  .nav-actions .icon-btn:first-child { display: none; }
+  .hero-inner { padding-top: calc(env(safe-area-inset-top, 0px) + 112px); }
+  .hero-pill { font-size: .78rem; }
+  .hero-proof { gap: 16px; }
+  .proof-rule { display: none; }
+  .petals i:nth-child(n+5) { display: none; }
+  .hero-art { height: 118vw; min-height: 420px; }
+  .arch-main { width: 78%; border-width: 6px; }
+
+  .ribbons { height: 150px; }
+  .ribbon-back { top: 26px; }
+  .ribbon-front { top: 66px; }
+
+  .bento {
+    display: flex; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 4px var(--gutter) 24px;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .bento::-webkit-scrollbar { display: none; }
+  .bento .card { flex: 0 0 82%; height: 440px; scroll-snap-align: start; }
+  .card-xl .card-info h3 { font-size: 1.7rem; }
+  .card-xl .card-info { flex-direction: column; align-items: flex-start; }
+
+  .picks { grid-template-columns: repeat(2, 1fr); }
+  .gift { transform: scale(.82); margin: 80px 0 -40px; }
+  .gift-tag { right: -40px; }
+
+  .note-wall {
+    display: flex; gap: 18px; align-items: flex-start;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 30px var(--gutter) 48px;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .note-wall::-webkit-scrollbar { display: none; }
+  .note-wall .paper { flex: 0 0 80%; scroll-snap-align: start; }
+  .note-wall .paper:nth-child(even) { margin-top: 0; }
+
+  .letter-form { flex-direction: column; border-radius: 24px; }
+  .letter-form input { padding: 1rem 1.1rem; }
+
+  /* footer: link groups become full-width rows instead of three cramped columns */
+  .footer-top { gap: 36px; }
+  .footer-cols { flex-direction: column; gap: 0; width: 100%; }
+  .footer-cols > div {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(207, 186, 238, .14);
+  }
+  .footer-cols > div:last-child { border-bottom: 1px solid rgba(207, 186, 238, .14); }
+  .footer-cols h2 { grid-column: 1 / -1; margin-bottom: 2px; }
+  .footer-cols a { margin-bottom: 0; font-size: .95rem; }
+  .footer-word { margin-top: 36px; font-size: 31vw; }
+  .footer-bottom { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+}

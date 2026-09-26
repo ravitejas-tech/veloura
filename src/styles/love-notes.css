@@ -1,0 +1,36 @@
+/* Veloura: Love Notes: pinned paper testimonials. */
+
+/* =========================================================
+   LOVE NOTES
+   ========================================================= */
+.note-wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 2.6vw, 36px); align-items: start; }
+.note-wall .paper:nth-child(even) { margin-top: 48px; }
+.paper {
+  position: relative; margin: 0;
+  padding: 44px 26px 26px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 33px, rgba(143, 109, 200, .16) 33px 34px),
+    var(--ivory);
+  background-position: 0 22px;
+  border-radius: 6px;
+  box-shadow: 0 30px 50px -30px rgba(38, 26, 59, .45), 0 2px 6px rgba(38, 26, 59, .06);
+  transform: rotate(var(--r, 0deg));
+  transition: transform .6s var(--ease), box-shadow .6s var(--ease);
+}
+.paper.is-in { transform: rotate(var(--r, 0deg)); }
+.paper:hover { transform: rotate(0deg) translateY(-8px) scale(1.02); box-shadow: 0 40px 60px -30px rgba(38, 26, 59, .5); z-index: 2; }
+.washi {
+  position: absolute; top: -12px; left: 50%;
+  width: 96px; height: 26px; margin-left: -48px;
+  background: repeating-linear-gradient(45deg, rgba(174, 145, 222, .75) 0 6px, rgba(207, 186, 238, .75) 6px 12px);
+  transform: rotate(-4deg);
+  opacity: .9;
+}
+.paper:nth-child(2) .washi { background: repeating-linear-gradient(45deg, rgba(239, 183, 204, .8) 0 6px, rgba(246, 215, 228, .8) 6px 12px); transform: rotate(3deg); }
+.paper:nth-child(4) .washi { background: rgba(220, 191, 133, .7); transform: rotate(6deg); }
+.paper blockquote { margin: 0; font-family: var(--hand); font-size: 1.55rem; line-height: 34px; color: var(--plum-800); }
+.paper figcaption { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.paper figcaption img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--lav-200); }
+.paper figcaption div { display: flex; flex-direction: column; line-height: 1.3; }
+.paper strong { font-size: .9rem; color: var(--plum-800); }
+.paper figcaption span { font-size: .75rem; color: var(--muted); }
