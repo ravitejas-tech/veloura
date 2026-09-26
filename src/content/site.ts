@@ -6,6 +6,30 @@
  * See docs/SEO.md for a walkthrough.
  */
 
+/** Used when no site URL is configured. Replace it with your domain. */
+const FALLBACK_URL = "https://veloura.example.com";
+
+/**
+ * The production URL, from the first of these that is set (blank values are
+ * ignored):
+ *   1. NEXT_PUBLIC_SITE_URL (.env.local or your host's dashboard)
+ *   2. VERCEL_PROJECT_PRODUCTION_URL (set automatically on Vercel)
+ *   3. FALLBACK_URL above
+ * "https://" is added if missing, and a trailing slash is removed.
+ */
+function resolveSiteUrl(): string {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() || process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim() || FALLBACK_URL;
+  const withProtocol = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    return new URL(withProtocol).href.replace(/\/$/, "");
+  } catch {
+    throw new Error(
+      `Invalid site URL "${raw}". Set NEXT_PUBLIC_SITE_URL to your full domain, e.g. https://www.your-domain.com`,
+    );
+  }
+}
+
 export const siteConfig = {
   /** Brand name used in the logo, footer, structured data and page title. */
   name: "Veloura",
@@ -16,10 +40,9 @@ export const siteConfig = {
   /**
    * Production URL, without a trailing slash. Used for canonical links,
    * sitemap.xml, robots.txt and Open Graph URLs.
-   * Set NEXT_PUBLIC_SITE_URL in .env.local (or your host's dashboard),
-   * or replace the fallback below.
+   * See resolveSiteUrl() above for where it comes from.
    */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://veloura.example.com").replace(/\/$/, ""),
+  url: resolveSiteUrl(),
 
   /** <title> of the home page (keep it under ~60 characters). */
   title: "Veloura | The Art of Thoughtful Gifting",

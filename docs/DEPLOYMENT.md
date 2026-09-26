@@ -2,7 +2,7 @@
 
 `npm run build` produces a **static website** in `out/`: plain HTML, CSS, JS, fonts, `sitemap.xml` and `robots.txt`. Any static host can serve it; no Node.js server is required.
 
-Before deploying, set **`NEXT_PUBLIC_SITE_URL`** to your real domain, either in `.env.local` or in the host's environment variables. It's baked into the canonical URL, the social-share tags, the sitemap and robots.txt at build time.
+Before deploying, set **`NEXT_PUBLIC_SITE_URL`** to your real domain, either in `.env.local` or in the host's environment variables. It's baked into the canonical URL, the social-share tags, the sitemap and robots.txt at build time. `https://` is added automatically if you leave it out. If the variable is missing or blank, Vercel builds use the project's production domain, and other hosts use the placeholder in `src/content/site.ts`.
 
 ---
 
@@ -10,7 +10,7 @@ Before deploying, set **`NEXT_PUBLIC_SITE_URL`** to your real domain, either in 
 
 1. Push the project to GitHub, GitLab or Bitbucket.
 2. On [vercel.com](https://vercel.com), choose **Add New → Project** and import the repo. The Next.js preset is detected automatically.
-3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL`.
+3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL` with your custom domain. You can skip this until you have one; Vercel's production domain is used automatically.
 4. Deploy, then add your domain under **Settings → Domains**.
 
 ## Netlify

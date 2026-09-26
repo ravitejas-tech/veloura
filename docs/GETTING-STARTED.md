@@ -67,5 +67,6 @@ npm run typecheck   # catches typos in content files (e.g. a missing price)
 | --- | --- |
 | `npm run build` fails with "Failed to fetch font" | The build downloads Google Fonts once, so it needs an internet connection. Retry when you're online. |
 | Port 3000 is in use | `npm run dev -- -p 3001` |
+| Build fails with `Invalid site URL` | `NEXT_PUBLIC_SITE_URL` isn't a valid address. Set it to your full domain, e.g. `https://www.your-domain.com`, or delete the variable. |
 | Changes to `.env.local` don't show up | Restart `npm run dev`. |
 | Animations don't play | Your OS has "Reduce motion" turned on. The template respects it on purpose. |
